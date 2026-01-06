@@ -197,10 +197,10 @@ const config: Config = {
   watchPathIgnorePatterns: [
     "<rootDir>/dist/",
     "<rootDir>/coverage/"
-  ]
+  ],
 
   // Whether to use watchman for file crawling
-  // watchman: true,
+  watchman: false,
 };
 
 export default config;
