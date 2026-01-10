@@ -7,12 +7,12 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "test": "node --import tsx node_modules/jest/bin/jest.js",
-    "test:watch": "node --import tsx node_modules/jest/bin/jest.js --watch",
-    "test:coverage": "node --import tsx node_modules/jest/bin/jest.js --coverage",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
     "dev": "nodemon",
-    "build": "rimraf ./dist && tsc",
-    "start": "npm run build && node dist/app.js"
+    "build": "npm run test && rimraf ./dist && tsc",
+    "start": "node dist/app.js"
   },
   "devDependencies": {
     "@jest/globals": "^30.2.0",

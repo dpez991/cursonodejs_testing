@@ -1,4 +1,10 @@
 {
+  // Comentados debido a que en desarrollo hace que visual no reconozca el jest, 
+  // para el momento del build descomentar
+
+  // "include": ["src/**/*"],
+  // "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"],
+  
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
     // File Layout

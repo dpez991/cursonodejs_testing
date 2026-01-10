@@ -19,7 +19,7 @@ const config: Config = {
   // clearMocks: false,
 
   // Indicates whether the coverage information should be collected while executing the test
-  collectCoverage: false,
+  collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   // collectCoverageFrom: undefined,
@@ -36,7 +36,7 @@ const config: Config = {
   coverageProvider: "v8",
 
   // A list of reporter names that Jest uses when writing coverage reports
-  // coverageReporters: [
+  // coverageReporters: ["text", "lcov"],
   //   "json",
   //   "text",
   //   "lcov",
@@ -92,7 +92,9 @@ const config: Config = {
   // ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-  // moduleNameMapper: {},
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1',
+  },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
@@ -104,7 +106,7 @@ const config: Config = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  // preset: 'ts-jest',
+  preset: 'ts-jest/presets/default-esm',
   extensionsToTreatAsEsm: ['.ts'],
 
   // Run tests from one or more projects
@@ -150,7 +152,6 @@ const config: Config = {
 
   // The test environment that will be used for testing
   testEnvironment: "node",
-  transform: {},
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
